@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+  ~ /**
+  ~  * Copyright © Vaimo Group. All rights reserved.
+  ~  * See LICENSE_VAIMO.txt for license details.
+  ~  */
+  -->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/ai-generations/get-list" method="GET">
+        <service class="Gundo\Integration\Api\GetAiGenerationsListInterface" method="execute"/>
+        <resources>
+            <resource ref="Gundo_Integration::management"/>
+        </resources>
+    </route>
+    <route url="/V1/ai-generations/save" method="POST">
+        <service class="Gundo\Integration\Api\SaveAiGenerationsInterface" method="execute"/>
+        <resources>
+            <resource ref="Gundo_Integration::management"/>
+        </resources>
+    </route>
+    <route url="/V1/ai-generations/:entityId" method="DELETE">
+        <service class="Gundo\Integration\Api\DeleteAiGenerationsByIdInterface" method="execute"/>
+        <resources>
+            <resource ref="Gundo_Integration::management"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,15 @@
+{
+  "ai_generations": {
+    "column": {
+      "ai_generations_id": true,
+      "product_id": true,
+      "category": true
+    },
+    "index": {
+      "AI_GENERATIONS_AI_GENERATIONS_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  }
+}

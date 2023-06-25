@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+  ~ /**
+  ~  * Copyright © Vaimo Group. All rights reserved.
+  ~  * See LICENSE_VAIMO.txt for license details.
+  ~  */
+  -->
+
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">ai_generations_listing.ai_generations_listing_data_source</item>
+            <item name="deps" xsi:type="string">ai_generations_listing.ai_generations_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New</label>
+            </button>
+        </buttons>
+        <spinner>ai_generations_listing_columns</spinner>
+        <deps>
+            <dep>ai_generations_listing.ai_generations_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="ai_generations_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">ai_generations_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Gundo_Integration::management</aclResource>
+        <dataProvider class="Gundo\Integration\Ui\DataProvider\AiGenerationsDataProvider"
+                      name="ai_generations_listing_data_source">
+            <settings>
+                <requestFieldName>ai_generations_id</requestFieldName>
+                <primaryFieldName>ai_generations_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="ai_generations_listing_columns">
+        <column name="ai_generations_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="product_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Product Id</label>
+            </settings>
+        </column>
+        <column name="category">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Category</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Gundo\Integration\Ui\Component\Listing\Column\AiGenerationsBlockActions">
+            <settings>
+                <indexField>ai_generations_id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

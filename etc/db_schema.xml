@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+  ~ /**
+  ~  * Copyright © Vaimo Group. All rights reserved.
+  ~  * See LICENSE_VAIMO.txt for license details.
+  ~  */
+  -->
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="ai_generations" resource="default" engine="innodb" comment="AiGenerations">
+        <column xsi:type="int" name="ai_generations_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Ai Generations Id Column"/>
+        <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" identity="false"
+                comment="Product Id Column"/>
+        <column xsi:type="int" name="category" padding="10" unsigned="true" nullable="false" identity="false"
+                comment="Category Column"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="ai_generations_id"/>
+        </constraint>
+        <index referenceId="AI_GENERATIONS_AI_GENERATIONS_ID" indexType="btree">
+            <column name="ai_generations_id"/>
+        </index>
+    </table>
+</schema>

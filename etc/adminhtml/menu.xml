@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+  ~ /**
+  ~  * Copyright © Vaimo Group. All rights reserved.
+  ~  * See LICENSE_VAIMO.txt for license details.
+  ~  */
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Gundo_Integration::management" sortOrder="100" title="Ai Generations Management"
+             module="Gundo_Integration" parent="Gundo_Sage::config_sage" resource="Gundo_Integration::management"
+             translate="title" action="ai_generations/aigenerations/index"/>
+    </menu>
+</config>

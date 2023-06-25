@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+  ~ /**
+  ~  * Copyright © Vaimo Group. All rights reserved.
+  ~  * See LICENSE_VAIMO.txt for license details.
+  ~  */
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Gundo\Integration\Api\Data\AiGenerationsInterface"
+                type="Gundo\Integration\Model\Data\AiGenerationsData"/>
+    <preference for="Gundo\Integration\Api\GetAiGenerationsListInterface"
+                type="Gundo\Integration\Query\AiGenerations\GetListQuery"/>
+    <preference for="Gundo\Integration\Api\SaveAiGenerationsInterface"
+                type="Gundo\Integration\Command\AiGenerations\SaveCommand"/>
+    <preference for="Gundo\Integration\Api\DeleteAiGenerationsByIdInterface"
+                type="Gundo\Integration\Command\AiGenerations\DeleteByIdCommand"/>
+    <preference for="Gundo\Integration\Api\Data\AiGenerationsSearchResultsInterface"
+                type="Gundo\Integration\Model\AiGenerationsSearchResults"/>
+</config>
